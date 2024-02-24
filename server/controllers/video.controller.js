@@ -54,7 +54,7 @@ export const updateVideo = async (req, res) => {
 // Controller function to handle deleting a video
 export const deleteVideo = async (req, res) => {
   try {
-    await Video.findByIdAndRemove(req.params.id);
+    await Video.findByIdAndDelete(req.params.id);
     res.json({ message: 'Video deleted' });
   } catch (err) {
     res.status(500).json({ message: err.message });

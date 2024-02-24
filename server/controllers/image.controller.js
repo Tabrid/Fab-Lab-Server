@@ -54,7 +54,7 @@ export const updateImage = async (req, res) => {
 // Controller function to handle deleting an image
 export const deleteImage = async (req, res) => {
   try {
-    await Image.findByIdAndRemove(req.params.id);
+    await Image.findByIdAndDelete(req.params.id);
     res.json({ message: 'Image deleted' });
   } catch (err) {
     res.status(500).json({ message: err.message });
